@@ -1,0 +1,9 @@
+server:
+  port: 80
+  address: localhost
+
+spring:
+  mvc:
+    view:
+      prefix: /templates
+      suffix: .html
