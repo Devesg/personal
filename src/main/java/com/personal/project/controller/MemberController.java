@@ -10,12 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MemberController {
     
-    @GetMapping(value="/greeting")
-    public String greeting(Model model) {
-
-        return "/greeting";
-    }
-    
+	
     @GetMapping(value="/register")
     public String register(@RequestParam String param) {
         return "/register";

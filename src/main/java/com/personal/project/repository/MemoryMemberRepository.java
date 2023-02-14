@@ -1,5 +1,6 @@
 package com.personal.project.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,8 +10,10 @@ import com.personal.project.domain.Member;
 
 public class MemoryMemberRepository implements MemberRepository {
 
+    // 메모리 저장소
     private static Map<Long,Member> store = new HashMap<>();
     private static long sequence = 0L;
+
 
     @Override
     public Member save(Member member) {
@@ -21,8 +24,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public List<Member> findAll() {
-        // TODO Auto-generated method stub
-        return null;
+        return new ArrayList<>(store.values());
     }
 
     @Override
@@ -32,8 +34,12 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findByName(String name) {
+        // 람다 스트림
         return store.values().stream().filter(member -> member.getName().equals(name)).findAny();
     }
 
-    
+    public void clearStore()
+    {
+        store.clear();
+    }
 }
