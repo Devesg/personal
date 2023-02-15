@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+	<base href="/" />
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Community</title>
 </head>
 <body>
-    <div>hello
-    </div>
+    <h1>Welcome to Community!</h1>
+    <p>Join our community and connect with others!</p>
+
+	<a th:href="@{/signup}">Sign up</a>
 </body>
 </html>
