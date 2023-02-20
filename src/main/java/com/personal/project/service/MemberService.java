@@ -50,4 +50,17 @@ public class MemberService {
                 });
     }
 
+    public Member getMemberFromSession(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            return null;
+        }
+    
+        Object sessionObj = session.getAttribute("loginMember");
+        if (sessionObj == null) {
+            return null;
+        }
+    
+        return (Member) sessionObj;
+    }
 }
